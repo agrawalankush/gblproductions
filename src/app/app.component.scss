@@ -1,0 +1,54 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease-in-out;
+}
+
+mat-toolbar.transparent {
+  background-color: transparent;
+}
+
+main {
+  padding-top: 64px; /* Adjust based on toolbar height */
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.home-button {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-card {
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-card:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  background-color: #1e1e1e;
+}
