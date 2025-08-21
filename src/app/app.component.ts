@@ -8,6 +8,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { slideInAnimation } from './route-animations';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { CommonModule } from '@angular/common';
     MatIconModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  animations: [slideInAnimation]
 })
 export class AppComponent {
   title = 'gblproductions';
@@ -39,5 +41,9 @@ export class AppComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 10;
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }

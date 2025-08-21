@@ -9,6 +9,13 @@ mat-toolbar {
   transition: background-color 0.3s ease-in-out;
 }
 
+.logo {
+height: 56px;
+width: 56px;
+margin-right: 16px;
+cursor: pointer;
+}
+
 mat-toolbar.transparent {
   background-color: transparent;
 }

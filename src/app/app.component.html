@@ -1,5 +1,7 @@
 <mat-toolbar [class.mat-elevation-z4]="isScrolled" [class.transparent]="!isScrolled">
-  <a mat-button routerLink="/" class="home-button">GBL</a>
+  <!-- <a mat-fab routerLink="/" class="home-button"> -->
+  <img height="56px" routerLink="/" width="56px" src="assets/logo.png" alt="GBL Productions Logo" class="logo">
+  <!-- </a> -->
   <span class="spacer"></span>
   <div class="nav-links" *ngIf="!(isHandset$ | async)">
     <a mat-button routerLink="/releases" class="nav-card">Releases</a>
@@ -15,8 +17,8 @@
   </div>
 </mat-toolbar>
 
-<main>
-  <router-outlet></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
 </main>
 
 <footer>

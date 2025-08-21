@@ -9,17 +9,20 @@
 <div class="featured-release">
   <h2>Featured Release</h2>
   <mat-card>
-    <mat-card-header>
+    <!-- <mat-card-header>
       <mat-card-title>New Single Out Now</mat-card-title>
       <mat-card-subtitle>Song Title</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://images.unsplash.com/photo-1516223725307-6f76b9ec8742?q=80&w=1974&auto=format&fit=crop" alt="Album Art">
-    <mat-card-content>
+    </mat-card-header> -->
+    <img mat-card-image src="assets/cover_art.png" alt="Album Art">
+    <!-- <mat-card-content>
       <p>A short description of the new single.</p>
-    </mat-card-content>
+    </mat-card-content> -->
     <mat-card-actions>
-      <a mat-button href="#">Listen on Spotify</a>
-      <a mat-button href="#">Listen on Apple Music</a>
+      <a mat-icon-button href="#"><img src="assets/spotify_logo.svg" alt="Spotify Logo" class="platform-logo"></a>
+      <a mat-icon-button href="#"><img src="assets/apple_music_logo.svg" alt="Apple Music Logo"
+          class="platform-logo"></a>
+      <a mat-icon-button href="#"><img src="assets/youtube_music_logo.svg" alt="YouTube Music Logo"
+          class="platform-logo"></a>
     </mat-card-actions>
   </mat-card>
 </div>
