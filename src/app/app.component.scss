@@ -1,3 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -22,6 +28,9 @@ mat-toolbar.transparent {
 
 main {
   padding-top: 64px; /* Adjust based on toolbar height */
+  min-height: calc(100vh - 64px - 80px); /* 64px for toolbar, 80px for footer (approx) */
+  display: flex;
+  flex-direction: column;
 }
 
 .spacer {
@@ -58,4 +67,5 @@ footer {
   padding: 2rem;
   text-align: center;
   background-color: #1e1e1e;
+  flex-shrink: 0; /* Prevent footer from shrinking */
 }

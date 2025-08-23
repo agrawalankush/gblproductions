@@ -3,10 +3,188 @@
   text-align: center;
 }
 
-mat-card {
-  max-width: 800px;
-  margin: 2rem auto;
+h1 {
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 60vh; /* Ensure enough height for the flip */
+}
+
+.about-card {
   background-color: #1e1e1e;
   color: white;
   text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Removed padding from here */
+  width: 100%;
+  max-width: 800px; /* Limit card width */
+  min-height: 600px; /* Set a minimum height for the card */
+  overflow: hidden; /* Crucial for backface-visibility */
+
+  /* Flip Card Specific Styles */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  transform-origin: center center; /* Ensure rotation is from the center */
+}
+
+.about-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push button to bottom */
+  padding: 1.5rem; /* Match parent padding */
+  box-sizing: border-box; /* Include padding in width/height */
+  overflow: auto; /* Add scroll if content overflows */
+}
+
+.flip-card-front {
+  background-color: #1e1e1e; /* Match card background */
+  transform: rotateY(0deg); /* Ensure it's facing front initially */
+  z-index: 2; /* Ensure front is on top initially */
+}
+
+.flip-card-back {
+  background-color: #1e1e1e; /* Match card background */
+  transform: rotateY(180deg); /* Ensure it's facing back initially */
+  z-index: 1; /* Ensure back is behind initially */
+}
+
+.about-card.flipped .flip-card-front {
+  transform: rotateY(180deg); /* Rotate front out of view when flipped */
+  z-index: 1; /* Move front behind when flipped */
+}
+
+.about-card.flipped .flip-card-back {
+  transform: rotateY(0deg); /* Rotate back into view when flipped */
+  z-index: 2; /* Bring back to front when flipped */
+}
+
+.flip-card-back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotateY(180deg); /* Counter-rotate content */
+}
+
+.card-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  flex-grow: 1; /* Allow content to take available space */
+  padding-bottom: 1rem; /* Add padding to prevent content touching button */
+}
+
+.card-image {
+  width: 100%;
+  max-width: 300px; /* Limit image size */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card-text-content {
+  flex: 1;
+}
+
+.card-text-content h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #FF5722; /* Accent color */
+}
+
+.card-text-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.flip-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /* Space between content and button */
+}
+
+.flip-button-container button {
+  min-width: 200px; /* Ensure button has a decent width */
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px; /* More rounded corners */
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.flip-button-container button[color="primary"] {
+  background-color: #FF5722; /* Use accent color */
+  color: white;
+}
+
+.flip-button-container button[color="primary"]:hover {
+  background-color: #e64a19; /* Darker shade on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flip-button-container button:not([color="primary"]) {
+  background-color: #424242; /* Darker background for 'Back' button */
+  color: white;
+}
+
+.flip-button-container button:not([color="primary"]):hover {
+  background-color: #616161;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .card-content-wrapper {
+    flex-direction: row; /* Side-by-side on larger screens */
+  }
+
+  .card-content-wrapper.reverse-order {
+    flex-direction: row-reverse;
+  }
+
+  .card-image {
+    max-width: 40%; /* Adjust image width */
+  }
+
+  .card-text-content {
+    padding-left: 1.5rem;
+  }
+
+  .card-content-wrapper.reverse-order .card-text-content {
+    padding-left: 0;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-card {
+    margin: 1rem;
+  }
 }

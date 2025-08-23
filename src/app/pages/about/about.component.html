@@ -1,32 +1,68 @@
 <div class="about-container">
-  <h1>About GBL Productions</h1>
-  <mat-card>
-    <mat-card-content>
-      <p>
-        GBL Productions is a Bangalore-based independent music label dedicated to creating <strong>authentic, original,
-          and AI-free music.</strong>
-        Founded by <strong>Kartik Mishra</strong>,
-        GBL Productions is the creative culmination of a deep passion for music, storytelling, and collaboration. As a
-        proudly homegrown label, we specialize in <strong>end-to-end song creation</strong>—right from conceptualizing
-        melodies and lyrics to full-scale production, mixing, and mastering.
+  <div class="card-grid">
+    <mat-card class="about-card flip-card" [class.flipped]="showGBLCard">
+      <div class="flip-card-front">
+        <div class="card-content-wrapper">
+          <img src="assets/KartikMishra_1.jpg" alt="Kartik Mishra" class="card-image">
+          <div class="card-text-content">
+            <h2>About Kartik Mishra</h2>
+            <p>
+              Kartik Mishra is a multifaceted artist who seamlessly blends romantic and pop music with a hint of rock
+              cult influence. Known for his poetic and deep writing style, Kartik’s songs explore the emotional
+              complexities of love and life. His sound combines melodious tunes with a raw edge, capturing listeners'
+              hearts with his soul-stirring vocals and heartfelt lyrics.
+            </p>
+            <p>
+              Based out of Bengaluru, Kartik's roots lie in Patna, where his journey in music began alongside his
+              technical expertise. A software engineer by education, he brings a unique perspective to music production,
+              utilizing advanced tools like Ableton to craft his sound. His music reflects not only his creative depth
+              but also his technical proficiency in the digital realm.
+            </p>
+            <!-- <p>
+              Kartik works exclusively on original compositions, ensuring that each song he produces is a true
+              reflection of his artistic vision. He is signed with GBL Productions, an indie music label that aligns
+              with his ethos of creating authentic, emotionally-driven music. Kartik's ability to write, compose, and
+              perform his songs makes him a true independent artist in today’s music industry.
+            </p> -->
+            <!-- <p>
+              Kartik Mishra is the visionary founder of GBL Productions, a multi-talented artist known for his innovative approach to music production. With a background in classical music and a passion for modern electronic sounds, Kartik blends diverse influences to create unique and captivating tracks. His work often explores themes of introspection and connection, delivered with a signature blend of intricate melodies and powerful rhythms. He is constantly experimenting with new sounds and technologies to push the boundaries of his artistry.
+            </p>
+            <p>
+              Driven by a commitment to genuine human creativity, Kartik established GBL Productions to be a nurturing ground for authentic, original, and AI-free music. He believes in fostering fresh voices in the Indian music landscape by offering young and talented music producers real-world opportunities to work on his compositions. His dedication to quality, originality, and artistic integrity is the cornerstone of GBL Productions.
+            </p> -->
+          </div>
+        </div>
+        <mat-card-actions class="flip-button-container">
+          <button mat-raised-button color="primary" (click)="toggleGBLCard()">GBL Productions Vision</button>
+        </mat-card-actions>
+      </div>
 
-      </p>
-      <p>
-        At the heart of GBL Productions is a commitment to genuine human creativity. In an era where artificial
-        intelligence is increasingly used in music generation, we take a principled stand to keep our artform human-led,
-        emotional, and organic. Every track we produce reflects the raw, unfiltered talent of the artists behind it.
-      </p>
-      <p>
-        Our mission extends beyond just producing music—we strive to be a nurturing ground for young and talented music
-        producers. By offering them real-world opportunities to work on our compositions, we help cultivate fresh voices
-        in the Indian music landscape. Alongside our in-house work, we actively collaborate with respected production
-        entities like Dream Art Records (Assam) and Bassleela Music (Delhi) to push the boundaries of creative exchange
-        and regional diversity.
-      </p>
-      <p>
-        With a focus on quality, originality, and artistic integrity, GBL Productions is emerging as a bold and
-        independent voice in India’s evolving music industry.
-      </p>
-    </mat-card-content>
-  </mat-card>
+      <div class="flip-card-back">
+        <div class="flip-card-back-content">
+          <div class="card-content-wrapper reverse-order">
+            <img src="assets/logo.png" alt="GBL Productions" class="card-image">
+            <div class="card-text-content">
+              <h2>GBL Productions Vision</h2>
+              <p>
+                GBL Productions - is a Bangalore-based independent music label dedicated to creating authentic,
+                original, and AI-free music. GBL Productions is
+                the creative culmination of a deep passion for music, storytelling, and collaboration. As a proudly
+                homegrown label, we specialize in <strong>end-to-end song creation</strong>—right from conceptualizing
+                melodies and lyrics to full-scale production, mixing, and mastering.
+              </p>
+              <p>
+                At the heart of GBL Productions is a commitment to genuine human creativity. In an era where artificial
+                intelligence is increasingly used in music generation, we take a principled stand to keep our artform
+                human-led, emotional, and organic. Every track we produce reflects the raw, unfiltered talent of the
+                artists behind it.
+              </p>
+            </div>
+          </div>
+          <mat-card-actions class="flip-button-container">
+            <button mat-raised-button (click)="toggleGBLCard()">Back to Kartik Mishra</button>
+          </mat-card-actions>
+        </div>
+      </div>
+    </mat-card>
+  </div>
 </div>

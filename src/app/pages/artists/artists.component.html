@@ -1,12 +1,23 @@
 <div class="artists-container">
-  <h1>Artists</h1>
   <div class="artist-grid">
-    <mat-card *ngFor="let artist of artists">
-      <img mat-card-image [src]="artist.photo" alt="{{ artist.name }}">
+    <mat-card *ngFor="let artist of artists" [ngStyle]="{'border-color': artist.styleColor}">
+      <div class="card-header">
+        <img mat-card-image [src]="artist.imageUrl" alt="{{ artist.name }}">
+        <div class="artist-info">
+          <h3>{{ artist.name }}</h3>
+          <p class="genre">{{ artist.genre }}</p>
+        </div>
+      </div>
       <mat-card-content>
-        <h3>{{ artist.name }}</h3>
-        <p>{{ artist.bio }}</p>
+        <p class="bio">{{ getShortBio(artist.bio, artist.id) }}</p>
+        <button mat-button color="primary" *ngIf="shouldShowReadMore(artist.bio, artist.id)"
+          (click)="toggleBio(artist.id)">Read More</button>
+        <button mat-button color="primary" *ngIf="shouldShowReadLess(artist.bio, artist.id)"
+          (click)="toggleBio(artist.id)">Read Less</button>
       </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">View Profile</button>
+      </mat-card-actions>
     </mat-card>
   </div>
 </div>

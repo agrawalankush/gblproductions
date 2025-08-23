@@ -1,0 +1,134 @@
+.release-detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.release-card {
+  width: 80%;
+  max-width: 900px;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+  display: flex;
+}
+
+.cover-art img {
+  width: 400px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lyrics-section {
+  padding: 2rem;
+  width: 100%;
+}
+
+.lyrics-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.lyrics-section pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.music-platforms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.music-platforms a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.music-platforms a:hover img {
+  transform: scale(1.1);
+}
+
+.behind-the-scenes-card {
+  width: 80%;
+  max-width: 900px;
+  margin-top: 2rem;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.behind-the-scenes-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.media-grid img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 360px;
+}
+
+@media (max-width: 992px) {
+  .release-card,
+  .behind-the-scenes-card {
+    width: 90%;
+  }
+
+  .cover-art img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+  }
+
+  .cover-art img {
+    width: 100%;
+    height: auto;
+  }
+
+  .lyrics-section {
+    padding: 1.5rem;
+  }
+
+  .lyrics-section pre {
+    height: 250px;
+  }
+
+  .release-detail-container {
+    padding: 1rem;
+  }
+
+  .release-card,
+  .behind-the-scenes-card {
+    width: 100%;
+  }
+}

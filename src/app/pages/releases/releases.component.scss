@@ -11,13 +11,49 @@
 }
 
 mat-card {
-  background-color: #1e1e1e;
+  background-color: #2a2a2a;
   color: white;
   text-align: left;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+mat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 mat-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+}
+
+
+mat-card-content {
+  padding: 1rem;
+}
+
+mat-card-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+mat-card-content p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.cta-button {
+  margin-top: 1rem;
+  background-color: #ff4081;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

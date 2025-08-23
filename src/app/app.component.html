@@ -5,15 +5,15 @@
   <span class="spacer"></span>
   <div class="nav-links" *ngIf="!(isHandset$ | async)">
     <a mat-button routerLink="/releases" class="nav-card">Releases</a>
-    <a mat-button routerLink="/artists" class="nav-card">Artists</a>
+    <!-- <a mat-button routerLink="/artists" class="nav-card">Collaborations</a> -->
     <a mat-button routerLink="/about" class="nav-card">About</a>
-    <!-- <a mat-button routerLink="/contact" class="nav-card">Contact</a> -->
+    <a mat-button routerLink="/contact" class="nav-card">Contact</a>
   </div>
   <div class="nav-icons" *ngIf="(isHandset$ | async)">
     <a mat-icon-button routerLink="/releases"><mat-icon>album</mat-icon></a>
-    <a mat-icon-button routerLink="/artists"><mat-icon>people</mat-icon></a>
+    <!-- <a mat-icon-button routerLink="/artists"><mat-icon>people</mat-icon></a> -->
     <a mat-icon-button routerLink="/about"><mat-icon>info</mat-icon></a>
-    <!-- <a mat-icon-button routerLink="/contact"><mat-icon>email</mat-icon></a> -->
+    <a mat-icon-button routerLink="/contact"><mat-icon>email</mat-icon></a>
   </div>
 </mat-toolbar>
 

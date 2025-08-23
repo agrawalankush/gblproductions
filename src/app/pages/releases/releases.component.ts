@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-releases',
     standalone: true,
-    imports: [MatCardModule, CommonModule],
+    imports: [MatCardModule, CommonModule, RouterModule],
     templateUrl: './releases.component.html',
     styleUrls: ['./releases.component.scss']
 })
 export class ReleasesComponent {
     releases = [
-        { title: 'Album Three', year: '2021', art: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?q=80&w=1974&auto=format&fit=crop' }
+        { title: 'Do Jahaan', desc: 'A soulful journey of love and longing between two worlds.', year: '2025', art: 'assets/cover_art.png' }
     ];
 }
