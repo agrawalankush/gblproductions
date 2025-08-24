@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Release } from '../../interfaces/release.interface';
 
 @Component({
     selector: 'app-releases',
@@ -10,8 +12,14 @@ import { RouterModule } from '@angular/router';
     templateUrl: './releases.component.html',
     styleUrls: ['./releases.component.scss']
 })
-export class ReleasesComponent {
-    releases = [
-        { title: 'Do Jahaan', desc: 'A soulful journey of love and longing between two worlds.', year: '2025', art: 'assets/cover_art.png' }
-    ];
+export class ReleasesComponent implements OnInit {
+    releases: Release[] = [];
+
+    constructor(private http: HttpClient) { }
+
+    ngOnInit(): void {
+        this.http.get<Release[]>('assets/data/releases.json').subscribe(data => {
+            this.releases = data;
+        });
+    }
 }

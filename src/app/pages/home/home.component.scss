@@ -1,6 +1,6 @@
 .hero-section {
-  height: 80vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop');
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/home_cover.jpeg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -48,6 +48,7 @@
 .featured-release {
   padding: 4rem 2rem;
   text-align: center;
+  cursor: pointer;
 }
 
 mat-card {
@@ -60,4 +61,7 @@ mat-card {
   height: 20px; /* Adjust as needed */
   margin-right: 8px;
   vertical-align: middle;
+}
+.home-button {
+  min-width: 200px;
 }

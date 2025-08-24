@@ -110,7 +110,7 @@ h1 {
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #FF5722; /* Accent color */
+  color: #fff; /* Accent color */
 }
 
 .card-text-content p {
@@ -137,13 +137,12 @@ h1 {
   transition: all 0.3s ease;
 }
 
-.flip-button-container button[color="primary"] {
-  background-color: #FF5722; /* Use accent color */
-  color: white;
-}
+// .flip-button-container button[color="primary"] {
+//   background-color: #FF5722; /* Use accent color */
+//   color: white;
+// }
 
 .flip-button-container button[color="primary"]:hover {
-  background-color: #e64a19; /* Darker shade on hover */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

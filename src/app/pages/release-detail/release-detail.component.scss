@@ -23,7 +23,6 @@
 .cover-art img {
   width: 400px;
   height: 100%;
-  object-fit: cover;
 }
 
 .lyrics-section {
@@ -131,4 +130,16 @@
   .behind-the-scenes-card {
     width: 100%;
   }
+}
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.links-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }

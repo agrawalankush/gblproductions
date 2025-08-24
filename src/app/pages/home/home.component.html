@@ -1,27 +1,37 @@
 <div class="hero-section">
   <div class="hero-text">
     <h1>Kartik Mishra</h1>
-    <p>Singer, Lyricist, Music Producer</p>
-    <button mat-raised-button color="primary">Explore Music</button>
+    <p>Singer-Songwriter & Music Producer</p>
+    <button class="home-button" mat-raised-button color="primary" routerLink="/releases">Explore Music</button>
+    <div class="social-icons">
+      <a mat-icon-button href="https://www.youtube.com/@gblproductions" target="_blank"><img src="assets/youtube.svg"
+          alt="Youtube Logo" class="platform-logo"></a>
+      <a mat-icon-button href="https://www.instagram.com/gbl.productions/" target="_blank">
+        <img src="assets/instagram.svg" alt="Instagram Logo" class="platform-logo">
+      </a>
+      <a mat-icon-button href="https://www.facebook.com/share/16qUvRr6uy/?mibextid=wwXIfr" target="_blank"><img
+          src="assets/facebook.svg" alt="Facebook Logo" class="platform-logo"></a>
+      <!-- <a mat-icon-button href="https://x.com/gblproductions" target="_blank"><img src="assets/x.svg"
+          alt="X(Twitter) Logo" class="platform-logo"></a> -->
+    </div>
+    <!--   
+     -->
   </div>
 </div>
 
 <div class="featured-release">
   <h2>Featured Release</h2>
-  <mat-card>
-    <!-- <mat-card-header>
-      <mat-card-title>New Single Out Now</mat-card-title>
-      <mat-card-subtitle>Song Title</mat-card-subtitle>
-    </mat-card-header> -->
-    <img mat-card-image src="assets/cover_art.png" alt="Album Art">
-    <!-- <mat-card-content>
-      <p>A short description of the new single.</p>
-    </mat-card-content> -->
+  <mat-card *ngIf="featuredRelease" [routerLink]="['/release', featuredRelease.id]">
+    <img mat-card-image [src]="featuredRelease.coverArt" alt="{{ featuredRelease.title }} Album Art">
     <mat-card-actions>
-      <a mat-icon-button href="#"><img src="assets/spotify_logo.svg" alt="Spotify Logo" class="platform-logo"></a>
-      <a mat-icon-button href="#"><img src="assets/apple_music_logo.svg" alt="Apple Music Logo"
+      <a mat-icon-button [href]="featuredRelease.links.spotify" target="_blank"
+        *ngIf="featuredRelease.links.spotify"><img src="assets/spotify_logo.svg" alt="Spotify Logo"
           class="platform-logo"></a>
-      <a mat-icon-button href="#"><img src="assets/youtube_music_logo.svg" alt="YouTube Music Logo"
+      <a mat-icon-button [href]="featuredRelease.links.appleMusic" target="_blank"
+        *ngIf="featuredRelease.links.appleMusic"><img src="assets/apple_music_logo.svg" alt="Apple Music Logo"
+          class="platform-logo"></a>
+      <a mat-icon-button [href]="featuredRelease.links.youtubeMusic" target="_blank"
+        *ngIf="featuredRelease.links.youtubeMusic"><img src="assets/youtube_music_logo.svg" alt="YouTube Music Logo"
           class="platform-logo"></a>
     </mat-card-actions>
   </mat-card>

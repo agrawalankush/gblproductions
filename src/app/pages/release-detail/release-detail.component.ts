@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClient } from '@angular/common/http';
+import { Release } from '../../interfaces/release.interface';
 
 @Component({
   selector: 'app-release-detail',
@@ -12,32 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './release-detail.component.scss'
 })
 export class ReleaseDetailComponent implements OnInit {
-  release: any;
+  release: Release | undefined;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const releaseId = params.get('id');
-      // In a real application, you would fetch the release details from a service based on the id
-      this.release = {
-        title: releaseId,
-        desc: 'A soulful journey of love and longing between two worlds.',
-        year: '2025',
-        art: 'assets/cover_art.png',
-        lyrics: `तू नहीं कल्पना, है तू मेरा यकीन\nहै नहीं तू यहाँ, फिर भी तू लाज़मी\n\nतेरी कमी खलती रही, तेरी छवि चलती रही\nतू जो नहीं, मैं भी नहीं, तेरे बिना जीना नहीं\n\nजानम मैं तेरा, बरसता आसमान\nराहें तू मेरी, मैं तेरा दो जहाँ\n\nसारी सारी दिन, सारी रात\nकरता रहूँ, तुझसे बात\n\nदुनिया भले, सपनों की थी\nचाहत मेरी, जन्मों की थी\n\nतेरी आहटें, मीठी राहतें\nएहसास वो महका, ये दीवाना बहका\n\nजानम मैं तेरा, बरसता आसमान\nराहें तू मेरी, मैं तेरा दो जहाँ\n\nसर चढ़ के जो, मेरे रहे\nतेरा नशा, कहते उसे\n\nदिल की ज़मीन, पे बस गया\nरूप तेरा, माया तेरी\n\nसाथ तेरा जो पाया, मलंग मैं हो गया\nआँखों में तेरी, मैं कहीं खो गया\n\nजानम मैं तेरा, बरसता आसमान\nराहें तू मेरी, मैं तेरा दो जहाँ.`,
-        behindTheScenes: {
-          description: ``,
-          images: [
-            'assets/bts/bts0.jpeg',
-            'assets/bts/bts1.jpeg',
-            'assets/bts/bts3.jpeg',
-            'assets/bts/bts4.jpeg',
-            'assets/bts/bts5.jpeg',
-            'assets/bts/bts8.jpeg',
-          ]
-        }
-      };
+      this.http.get<Release[]>('assets/data/releases.json').subscribe(data => {
+        this.release = data.find(r => r.id === releaseId);
+      });
     });
   }
 }
