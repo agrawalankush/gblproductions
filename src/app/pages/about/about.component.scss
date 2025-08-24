@@ -126,10 +126,11 @@ h1 {
 }
 
 .flip-button-container button {
-  min-width: 200px; /* Ensure button has a decent width */
+  min-width: 200px;
   padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 25px; /* More rounded corners */
+  font-size: 0.8rem;
+  min-height: 56px;
+  border-radius: 32px; /* More rounded corners */
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
@@ -185,5 +186,12 @@ h1 {
 @media (max-width: 767px) {
   .about-card {
     margin: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .flip-button-container {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

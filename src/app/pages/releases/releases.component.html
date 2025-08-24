@@ -2,7 +2,9 @@
   <div class="release-grid">
     <a *ngFor="let release of releases" [routerLink]="['/release', release.id]">
       <mat-card>
-        <img mat-card-image [src]="release.coverArt" alt="{{ release.title }} Album Art">
+        <div class="release-cover-art-container">
+          <img mat-card-image [src]="release.coverArt" alt="{{ release.title }} Album Art">
+        </div>
         <mat-card-content>
           <h3>{{ release.title }}</h3>
           <p>{{release.artist}}</p>
