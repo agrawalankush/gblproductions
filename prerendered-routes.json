@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/",
+    "/about",
+    "/artists",
+    "/contact",
+    "/releases"
+  ]
+}
