@@ -109,8 +109,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/gblproductions/",
-            "directory": "dist/gblproductions/browser"
+            "baseHref": "/"
           }
         }
       }
