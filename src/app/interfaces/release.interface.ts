@@ -9,6 +9,10 @@ export interface Release {
     spotify?: string;
     appleMusic?: string;
     youtubeMusic?: string;
+    amazonMusic?: string;
+    jiosaavan?: string;
+    youtube?: string;
+    youtube_id?: string;
   };
   lyrics?: string;
   behindTheScenes?: {

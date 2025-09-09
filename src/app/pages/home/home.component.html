@@ -9,8 +9,8 @@
       <a mat-icon-button href="https://www.instagram.com/gbl.productions/" target="_blank">
         <img src="assets/instagram.svg" alt="Instagram Logo" class="platform-logo">
       </a>
-      <a mat-icon-button href="https://www.facebook.com/share/16qUvRr6uy/?mibextid=wwXIfr" target="_blank"><img
-          src="assets/facebook.svg" alt="Facebook Logo" class="platform-logo"></a>
+      <a mat-icon-button href="https://www.facebook.com/gblproductions" target="_blank"><img src="assets/facebook.svg"
+          alt="Facebook Logo" class="platform-logo"></a>
       <!-- <a mat-icon-button href="https://x.com/gblproductions" target="_blank"><img src="assets/x.svg"
           alt="X(Twitter) Logo" class="platform-logo"></a> -->
     </div>
@@ -23,16 +23,35 @@
   <h2>Featured Release</h2>
   <mat-card *ngIf="featuredRelease" [routerLink]="['/release', featuredRelease.id]">
     <img mat-card-image [src]="featuredRelease.coverArt" alt="{{ featuredRelease.title }} Album Art">
-    <mat-card-actions>
-      <a mat-icon-button [href]="featuredRelease.links.spotify" target="_blank"
-        *ngIf="featuredRelease.links.spotify"><img src="assets/spotify_logo.svg" alt="Spotify Logo"
-          class="platform-logo"></a>
-      <a mat-icon-button [href]="featuredRelease.links.appleMusic" target="_blank"
-        *ngIf="featuredRelease.links.appleMusic"><img src="assets/apple_music_logo.svg" alt="Apple Music Logo"
-          class="platform-logo"></a>
-      <a mat-icon-button [href]="featuredRelease.links.youtubeMusic" target="_blank"
-        *ngIf="featuredRelease.links.youtubeMusic"><img src="assets/youtube_music_logo.svg" alt="YouTube Music Logo"
-          class="platform-logo"></a>
-    </mat-card-actions>
+    <div class="links-section">
+      <div>
+        <a mat-icon-button [href]="featuredRelease.links.youtube" target="_blank" *ngIf="featuredRelease.links.youtube">
+          <img src="assets/youtube.svg" alt="Listen on YouTube">
+        </a>
+        <a mat-icon-button [href]="featuredRelease.links.youtubeMusic" target="_blank"
+          *ngIf="featuredRelease.links.youtubeMusic">
+          <img src="assets/youtube_music_logo.svg" alt="Listen on YouTube Music">
+        </a>
+        <a mat-icon-button [href]="featuredRelease.links.spotify" target="_blank" *ngIf="featuredRelease.links.spotify">
+          <img src="assets/spotify_logo.svg" alt="Listen on Spotify">
+        </a>
+        <a mat-icon-button [href]="featuredRelease.links.appleMusic" target="_blank"
+          *ngIf="featuredRelease.links.appleMusic">
+          <img src="assets/apple_music_logo.svg" alt="Listen on Apple Music">
+        </a>
+        <a mat-icon-button [href]="featuredRelease.links.jiosaavan" target="_blank"
+          *ngIf="featuredRelease.links.jiosaavan">
+          <img src="assets/jio_savan_logo.png" alt="Listen on JioSaavan">
+        </a>
+        <a mat-icon-button [href]="featuredRelease.links.amazonMusic" target="_blank"
+          *ngIf="featuredRelease.links.amazonMusic">
+          <img src="assets/amazon_music.webp" alt="Listen on Amazon Music">
+        </a>
+      </div>
+    </div>
   </mat-card>
+  <div class="unlock-story" *ngIf="featuredRelease">
+    <button mat-raised-button [routerLink]="['/release', featuredRelease.id]" color="">Unlock The Story
+      &nbsp;🌟</button>
+  </div>
 </div>

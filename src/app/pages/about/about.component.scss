@@ -175,6 +175,8 @@ h1 {
 
   .card-text-content {
     padding-left: 1.5rem;
+    text-align: left;
+    overflow-wrap: break-word;
   }
 
   .card-content-wrapper.reverse-order .card-text-content {

@@ -10,6 +10,9 @@
           <pre>{{ release.lyrics }}</pre>
         </div>
         <div class="links-section">
+          <a mat-icon-button [href]="release.links.youtube" target="_blank" *ngIf="release.links.youtube">
+            <img src="assets/youtube.svg" alt="Listen on YouTube">
+          </a>
           <a mat-icon-button [href]="release.links.youtubeMusic" target="_blank" *ngIf="release.links.youtubeMusic">
             <img src="assets/youtube_music_logo.svg" alt="Listen on YouTube Music">
           </a>
@@ -19,11 +22,17 @@
           <a mat-icon-button [href]="release.links.appleMusic" target="_blank" *ngIf="release.links.appleMusic">
             <img src="assets/apple_music_logo.svg" alt="Listen on Apple Music">
           </a>
+          <a mat-icon-button [href]="release.links.jiosaavan" target="_blank" *ngIf="release.links.jiosaavan">
+            <img src="assets/jio_savan_logo.png" alt="Listen on JioSaavan">
+          </a>
+          <a mat-icon-button [href]="release.links.amazonMusic" target="_blank" *ngIf="release.links.amazonMusic">
+            <img src="assets/amazon_music.webp" alt="Listen on Amazon Music">
+          </a>
         </div>
       </div>
     </div>
   </mat-card>
-
+  <!-- <app-youtube-card videoId="GzI1vv3N46s"></app-youtube-card> -->
   <mat-card class="behind-the-scenes-card"
     *ngIf="release.behindTheScenes && release.behindTheScenes.images && release.behindTheScenes.images.length > 0">
     <h2>Behind The Scenes</h2>
