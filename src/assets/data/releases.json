@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Do Jahaan",
     "artist": "Kartik Mishra",
-    "coverArt": "assets/cover_art.png",
+    "coverArt": "assets/do-jahaan/cover_art.png",
     "releaseDate": "2025-09-05",
     "description": "A soulful journey of love and longing between two worlds.",
     "links": {
@@ -19,12 +19,70 @@
     "behindTheScenes": {
       "description": "",
       "images": [
-        "assets/bts/bts0.jpeg",
-        "assets/bts/bts1.jpeg",
-        "assets/bts/bts3.jpeg",
-        "assets/bts/bts4.jpeg",
-        "assets/bts/bts5.jpeg",
-        "assets/bts/bts8.jpeg"
+        "assets/do-jahaan/bts0.jpeg",
+        "assets/do-jahaan/bts1.jpeg",
+        "assets/do-jahaan/bts3.jpeg",
+        "assets/do-jahaan/bts4.jpeg",
+        "assets/do-jahaan/bts5.jpeg",
+        "assets/do-jahaan/bts8.jpeg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "Tere Hi",
+    "artist": "Kartik Mishra",
+    "coverArt": "assets/tere-hi/cover_art.png",
+    "releaseDate": "2026-01-23",
+    "description": "A confession of love where the only wish is you!",
+    "links": {
+      "youtube": "https://www.youtube.com/watch?v=r3Y_7Alv800",
+      "spotify": "https://open.spotify.com/album/3TWxUQXbGX6J13x7XgVOd4",
+      "appleMusic": "https://music.apple.com/in/song/tere-hi/1883239405",
+      "youtubeMusic": "https://music.youtube.com/watch?v=uBURw0ngta4&si=_LXlUrnYG2l_ligE",
+      "jiosaavan": "https://www.jiosaavn.com/song/tere-hi/GzsdYj8dBgY",
+      "amazonMusic": "https://music.amazon.in/albums/B0GG4RG272?do=play&trackAsin=B0GG4NRWWR&ts=1769109876&ref=dm_sh_j8bCMc70cAXbgesqjBWNCAqZ8",
+      "youtube_id": "r3Y_7Alv800"
+    },
+    "lyrics": "इन दिनों मैंने आफत\nपाली है नई\nरात दिन तेरी चाहत\nबस तेरी दिल्लगी\nराह तेरी ही ताकू\nबात तेरी करी\nरात दिन तेरी चाहत\nबस तेरी दिल्लगी\nतेरे ही होना चाहे बस,\nख्वाबों में खोना चा हे बस,\nबेखुदी, मेरे नस नस\nतेरे ही\nहोना चाहे\nहोना चाहिए बस\nजान-ए-जान \nहाल तू मेरा \nदेख ना\nआके मिल जरा\nकि तेरे बिन \nबीतें ना ये दिन\nकहकशा\nखोजे तुझमें ही मंजिल\nतेरे ही होना चाहे बस,\nख्वाबों में खोना चा हे बस,\nबेखुदी, मेरे नस नस\nतेरे ही\nहोना चाहे\nहोना चाहिए बस\nतेरी आँखों में\nदेखूं तो\nदुनिया देख लूं मैं\nइन जुल्फों के\nसाये में\nरातें सीख लूं मैं\nतुम मिल जाओ ऐसे\nजैसी कोई परी\nमुस्कुराकर बना दो\nदिल उड़न तश्तरी\nसोच्के, \nआँखें हैं भारी\nमानो तू, \nहो यहीं कहीं\nकि तेरे बिन\nबीते ना ये दिन\nकहकशा \nखोजे तुझमें ही मंजिल है\nतेरे\nही होना चाहे बस,\nख्वाबों में खोना चा हे बस,\nबेखुदी, मेरे नस नस\nतेरे ही\nहोना चाहे\nहोना चाहिए बस",
+    "behindTheScenes": {
+      "description": "",
+      "images": [
+        "assets/tere-hi/BTS0.jpg",
+        "assets/tere-hi/BTS1.jpg",
+        "assets/tere-hi/BTS2.jpg",
+        "assets/tere-hi/BTS3.jpg",
+        "assets/tere-hi/BTS4.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "3",
+    "title": "Bepanaah",
+    "artist": "Kartik Mishra",
+    "coverArt": "assets/bepanaah/cover_art.png",
+    "releaseDate": "2026-02-13",
+    "description": "Beyond names, beyond faith — a love story of two souls from different backgrounds.",
+    "links": {
+      "youtube": "https://www.youtube.com/watch?v=Hq7XxqTK9gI",
+      "spotify": "https://open.spotify.com/track/4yuKksDnqlvzNB6FS3fRbA?si=5e23543450b94a63",
+      "appleMusic": "https://music.apple.com/in/album/bepanaah-single/1874432571",
+      "youtubeMusic": "https://music.youtube.com/watch?v=bywgdcFWcWg&si=XEXZlrSgQtZfBI6w",
+      "jiosaavan": "https://www.jiosaavn.com/song/bepanaah/ABxdWz9IU34",
+      "amazonMusic": "https://music.amazon.in/albums/B0GLCSWKRQ?do=play&trackAsin=B0GLD3X2Z3&ts=1771007629&ref=dm_sh_gnwyAQndirC9jgRo66IgPpcSM",
+      "youtube_id": "Hq7XxqTK9gI"
+    },
+    "lyrics": "कहानी अपनी\nअगर होती ऐसी\nजिसमें अपना\nमिलना नहीं हो लिखा\nनिशानी अपनी\nनहीं एक जैसी\nबहार-ए-गुल का\nखिलना नहीं हो लिखा\nहो फ़ास्ले\nहां दयारे\nअधूरे सांस लें\nहो फ़ास्ले\nहो रीहा \nकैद से\nऐसी बारिश हो\nखोज पे\nचल पड़ें\nतेरी\nख्वाहिश हो\nबेपनाह\nप्यार हो\nतू हो सामने\nरब कोई\nपूचे तो\nतेरा नाम लें\nअगर हम मिल गये\nमानो रात दिन\nआसमान ज़मीन\nमिल गये\nधागा रेशमी\nहोके आर पार \nमानों दिल से दिल\nसिल गये\nज़ुबानी अपनी\nनहीं एक जैसी\nरुहानी लगती\nबोली\nतेरी क्यू भला\nमैं मेरा तू\nदो मनचले\nसमन्दर हर कहिन\nसंग बेह चले\nआरजू\nमिन्नतें\nलाखो थी कारी\nहिचकिया\nसांसों में\nबातों में दिलबरी\nबेपनाह\nप्यार हो\nतू हो सामने\nरब कोई\nपूचे तो\nतेरा नाम लें",
+    "behindTheScenes": {
+      "description": "",
+      "images": [
+        "assets/bepanaah/BTS0.jpeg",
+        "assets/bepanaah/BTS1.jpeg",
+        "assets/bepanaah/BTS2.jpeg",
+        "assets/bepanaah/BTS3.jpeg",
+        "assets/bepanaah/BTS4.jpeg"
       ]
     },
     "featured": true

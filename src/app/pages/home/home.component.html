@@ -1,57 +1,91 @@
-<div class="hero-section">
-  <div class="hero-text">
-    <h1>Kartik Mishra</h1>
-    <p>Singer-Songwriter & Music Producer</p>
-    <button class="home-button" mat-raised-button color="primary" routerLink="/releases">Explore Music</button>
-    <div class="social-icons">
-      <a mat-icon-button href="https://www.youtube.com/@gblproductions" target="_blank"><img src="assets/youtube.svg"
-          alt="Youtube Logo" class="platform-logo"></a>
-      <a mat-icon-button href="https://www.instagram.com/gbl.productions/" target="_blank">
-        <img src="assets/instagram.svg" alt="Instagram Logo" class="platform-logo">
-      </a>
-      <a mat-icon-button href="https://www.facebook.com/gblproductions" target="_blank"><img src="assets/facebook.svg"
-          alt="Facebook Logo" class="platform-logo"></a>
-      <!-- <a mat-icon-button href="https://x.com/gblproductions" target="_blank"><img src="assets/x.svg"
-          alt="X(Twitter) Logo" class="platform-logo"></a> -->
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">Kartik Mishra</h1>
+      <p class="hero-subtitle">Singer • Songwriter</p>
+      <p class="hero-description">I write love songs, guitar on a bassline.
+        Romantic indie originals new songs, often.</p>
+      <button class="cta-button" routerLink="/releases">Explore All Releases</button>
     </div>
-    <!--   
-     -->
+    <div class="social-links">
+      <a href="https://www.youtube.com/@music.kartikmishra" target="_blank" class="social-link youtube" title="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/music.kartikmishra/" target="_blank" class="social-link instagram"
+        title="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.63c-.79.297-1.486.703-2.134 1.351-.648.648-1.054 1.345-1.351 2.134-.297.788-.5 1.657-.56 2.935C.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.263 2.148.56 2.936.297.787.703 1.484 1.351 2.132.648.648 1.345 1.054 2.135 1.351.789.297 1.657.499 2.935.559C8.333 23.987 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.936-.559.789-.297 1.485-.703 2.133-1.351.648-.648 1.054-1.345 1.351-2.133.297-.789.499-1.659.559-2.936.059-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.559-2.937-.297-.789-.703-1.485-1.351-2.133-.648-.648-1.344-1.054-2.133-1.351-.788-.297-1.659-.499-2.937-.559C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.009 4.849.07 1.171.054 1.805.244 2.227.408.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.354 1.056.408 2.227.061 1.264.07 1.646.07 4.849s-.009 3.585-.07 4.849c-.054 1.171-.244 1.806-.408 2.228-.217.562-.477.96-.896 1.382-.419.419-.824.679-1.381.896-.422.164-1.056.354-2.227.408-1.264.061-1.646.07-4.849.07s-3.585-.009-4.849-.07c-1.171-.054-1.805-.244-2.228-.408-.562-.217-.96-.477-1.381-.896-.42-.419-.68-.819-.896-1.381-.164-.422-.354-1.056-.408-2.227-.061-1.264-.07-1.646-.07-4.849s.009-3.585.07-4.849c.054-1.171.244-1.805.408-2.227.217-.562.476-.96.896-1.382.419-.419.824-.679 1.381-.896.422-.164 1.056-.354 2.227-.408 1.264-.061 1.646-.07 4.849-.07z" />\n          <circle cx="12" cy="12" r="3.846" />\n          <circle cx="18.406" cy="5.594" r="0.9" />
+        </svg>
+      </a>
+      <a href="https://www.x.com/_kartikmishra_/" target="_blank" class="social-link twitter" title="X (Twitter)">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.17-6.763-5.91 6.763h-3.308l7.73-8.835L.424 2.25h6.74l4.888 6.469L17.744 2.25h.5zm-1.106 17.62h1.828L5.283 4.126H3.283l14.855 15.744z" />
+        </svg>
+      </a>
+      <a href="https://www.facebook.com/gblproductions" target="_blank" class="social-link facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+        </svg>
+      </a>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="featured-release">
-  <h2>Featured Release</h2>
-  <mat-card *ngIf="featuredRelease" [routerLink]="['/release', featuredRelease.id]">
-    <img mat-card-image [src]="featuredRelease.coverArt" alt="{{ featuredRelease.title }} Album Art">
-    <div class="links-section">
-      <div>
-        <a mat-icon-button [href]="featuredRelease.links.youtube" target="_blank" *ngIf="featuredRelease.links.youtube">
-          <img src="assets/youtube_red.png" alt="Listen on YouTube">
-        </a>
-        <a mat-icon-button [href]="featuredRelease.links.youtubeMusic" target="_blank"
-          *ngIf="featuredRelease.links.youtubeMusic">
-          <img src="assets/youtube_music_logo.svg" alt="Listen on YouTube Music">
-        </a>
-        <a mat-icon-button [href]="featuredRelease.links.spotify" target="_blank" *ngIf="featuredRelease.links.spotify">
-          <img src="assets/spotify_logo.svg" alt="Listen on Spotify">
-        </a>
-        <a mat-icon-button [href]="featuredRelease.links.appleMusic" target="_blank"
-          *ngIf="featuredRelease.links.appleMusic">
-          <img src="assets/apple_music_logo.svg" alt="Listen on Apple Music">
-        </a>
-        <a mat-icon-button [href]="featuredRelease.links.jiosaavan" target="_blank"
-          *ngIf="featuredRelease.links.jiosaavan">
-          <img src="assets/jio_savan_logo.png" alt="Listen on JioSaavan">
-        </a>
-        <a mat-icon-button [href]="featuredRelease.links.amazonMusic" target="_blank"
-          *ngIf="featuredRelease.links.amazonMusic">
-          <img src="assets/amazon_music.webp" alt="Listen on Amazon Music">
-        </a>
+<!-- All Releases Section -->
+<section class="releases-section">
+  <div class="section-header">
+    <h2>Latest Releases</h2>
+    <p class="section-subtitle">Discover the stories behind every track</p>
+  </div>
+
+  <div class="releases-grid" *ngIf="releases && releases.length > 0">
+    <div class="release-card" *ngFor="let release of releases" [class.expanded]="selectedRelease?.id === release.id">
+      <!-- Release Card (entire card clickable) -->
+      <div class="release-image-wrapper" (click)="goToDetails(release)" style="cursor:pointer;">
+        <img [src]="release.coverArt" [alt]="release.title" class="release-image">
+        <div class="release-overlay"></div>
+      </div>
+      <div class="release-info" (click)="goToDetails(release)" style="cursor:pointer;">
+        <h3>{{ release.title }}</h3>
+        <p class="artist">{{ release.artist }}</p>
+        <p class="release-date">{{ release.releaseDate | date:'MMM d, yyyy' }}</p>
+        <p class="description">{{ release.description }}</p>
+        <div class="release-platforms">
+          <a *ngIf="release.links.spotify" [href]="release.links.spotify" target="_blank" class="platform-link spotify"
+            title="Spotify" (click)="$event.stopPropagation()">
+            <img src="assets/spotify_logo.svg" alt="Spotify">
+          </a>
+          <a *ngIf="release.links.appleMusic" [href]="release.links.appleMusic" target="_blank"
+            class="platform-link apple" title="Apple Music" (click)="$event.stopPropagation()">
+            <img src="assets/apple_music_logo.svg" alt="Apple Music">
+          </a>
+          <a *ngIf="release.links.youtube" [href]="release.links.youtube" target="_blank" class="platform-link youtube"
+            title="YouTube" (click)="$event.stopPropagation()">
+            <img src="assets/youtube_red.png" alt="YouTube">
+          </a>
+          <a *ngIf="release.links.youtubeMusic" [href]="release.links.youtubeMusic" target="_blank"
+            class="platform-link youtube-music" title="YouTube Music" (click)="$event.stopPropagation()">
+            <img src="assets/youtube_music_logo.svg" alt="YouTube Music">
+          </a>
+          <a *ngIf="release.links.amazonMusic" [href]="release.links.amazonMusic" target="_blank"
+            class="platform-link amazon" title="Amazon Music" (click)="$event.stopPropagation()">
+            <img src="assets/amazon_music.webp" alt="Amazon Music">
+          </a>
+          <a *ngIf="release.links.jiosaavan" [href]="release.links.jiosaavan" target="_blank" class="platform-link jio"
+            title="JioSaavan" (click)="$event.stopPropagation()">
+            <img src="assets/jio_savan_logo.png" alt="JioSaavan">
+          </a>
+        </div>
+        <div class="view-details-hint">View Full Details →</div>
       </div>
     </div>
-  </mat-card>
-  <div class="unlock-story" *ngIf="featuredRelease">
-    <button mat-raised-button [routerLink]="['/release', featuredRelease.id]" color="">Unlock The Story
-      &nbsp;🌟</button>
   </div>
-</div>
+</section>

@@ -1,3 +1,995 @@
+// Premium glass background and card hover for Other Songs
+.premium-glass-bg {
+  background: rgba(255,255,255,0.10);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 1.5rem 0.5rem 2rem 0.5rem;
+  margin-top: 0.5rem;
+}
+.other-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  gap: 1.5rem;
+}
+.other-header-row h3 {
+  font-size: 1.35rem;
+  color: #ff1b6d;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+.view-all-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff1b6d 0%, #00d9ff 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.5rem 1.3rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+.view-all-btn:hover {
+  background: linear-gradient(90deg, #00d9ff 0%, #ff1b6d 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.premium-card-hover {
+  border: 2.5px solid transparent;
+  transition: border 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.premium-card-hover:hover {
+  border: 2.5px solid #ff1b6d;
+  box-shadow: 0 12px 32px rgba(255,27,109,0.12);
+  transform: translateY(-8px) scale(1.05);
+  z-index: 2;
+}
+.other-card {
+  min-width: 200px;
+  max-width: 240px;
+  width: 20vw;
+}
+.other-card-img {
+  height: 160px;
+}
+@media (max-width: 900px) {
+  .other-card {
+    min-width: 70vw;
+    max-width: 90vw;
+    width: 90vw;
+  }
+  .other-card-img {
+    height: 110px;
+  }
+}
+
+// Elegant Previous/Next navigation with cover art (vertical column layout)
+.release-nav-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 0 0 18%;
+  min-width: 200px;
+  max-width: 260px;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(255,27,109,0.08) 0%, rgba(0,217,255,0.08) 100%);
+  border: 2px solid rgba(255,27,109,0.2);
+  border-radius: 1.5rem;
+  padding: 1.2rem 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,27,109,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.nav-card:hover::before {
+  opacity: 1;
+}
+
+.nav-card:hover {
+  border-color: #ff1b6d;
+  box-shadow: 0 12px 40px rgba(255,27,109,0.2), 0 0 30px rgba(0,217,255,0.1);
+  transform: translateY(-4px);
+}
+
+.nav-card.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.nav-prev-card {
+  flex-direction: column;
+}
+
+.nav-next-card {
+  flex-direction: column;
+}
+
+.nav-card-image {
+  position: relative;
+  min-width: 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff1b6d 0%, #00d9ff 100%);
+  flex-shrink: 0;
+}
+
+.nav-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.nav-card:hover .nav-card-image img {
+  transform: scale(1.1);
+}
+
+.nav-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-card:hover .nav-card-overlay {
+  opacity: 1;
+}
+
+.nav-card-overlay mat-icon {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #fff;
+}
+
+.nav-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: center;
+  width: 100%;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  color: #00d9ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.nav-card-info h4 {
+  font-size: 0.95rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.nav-card-info p {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .release-hero-main-container {
+    gap: 1.5rem;
+  }
+  
+  .release-hero-card {
+    flex: 0 0 75%;
+  }
+  
+  .release-nav-cards {
+    flex: 0 0 20%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .release-hero-main-container {
+    gap: 1rem;
+  }
+  
+  .release-hero-card {
+    padding: 2rem 2rem 1.5rem 2rem;
+  }
+  
+  .nav-card {
+    padding: 1rem 0.8rem;
+  }
+  
+  .nav-card-image {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .release-hero-main-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .release-hero-card {
+    flex: 0 0 auto;
+    width: 95vw;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+  
+  .release-nav-cards {
+    flex-direction: row;
+    width: 95vw;
+    max-width: 100%;
+  }
+  
+  .nav-card {
+    flex: 1;
+    padding: 1rem 0.8rem;
+  }
+  
+  .nav-card-image {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .nav-card-info h4 {
+    font-size: 0.85rem;
+  }
+  
+  .nav-card-info p {
+    font-size: 0.75rem;
+  }
+}
+// Other Songs horizontal carousel
+.release-other-section {
+  width: 100vw;
+  max-width: 1100px;
+  margin: 3rem auto 2rem auto;
+  padding: 0 1rem;
+}
+.release-other-section h3 {
+  font-size: 1.3rem;
+  color: #ff1b6d;
+  margin-bottom: 1rem;
+}
+.other-carousel {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1.2rem;
+}
+.other-carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+}
+.other-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.10);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  min-width: 180px;
+  max-width: 220px;
+  width: 18vw;
+  text-decoration: none;
+  color: #f4f4f4;
+  scroll-snap-align: start;
+  transition: transform 0.18s, box-shadow 0.18s;
+  overflow: hidden;
+  position: relative;
+}
+.other-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 1.2rem 1.2rem 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  background: #232946;
+}
+.other-card-info {
+  width: 100%;
+  padding: 0.7rem 0.8rem 1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(30, 34, 44, 0.92);
+  border-radius: 0 0 1.2rem 1.2rem;
+}
+.other-card-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.other-card-artist {
+  font-size: 0.98rem;
+  color: #00d9ff;
+  font-weight: 500;
+}
+.other-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+  background: rgba(255,255,255,0.16);
+}
+@media (max-width: 900px) {
+  .other-card {
+    min-width: 60vw;
+    max-width: 80vw;
+    width: 80vw;
+  }
+  .other-card-img {
+    height: 100px;
+  }
+}
+// Modern glassmorphic hero and floating card with side nav
+.release-hero-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.release-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.release-hero-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(24,28,36,0.7);
+  backdrop-filter: blur(18px) brightness(0.7) saturate(1.2);
+  z-index: 1;
+}
+
+.release-hero-main-container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.release-hero-card {
+  flex: 0 0 80%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 2.2rem;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px) saturate(1.2);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.release-hero-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: flex-start;
+  width: 100%;
+}
+.release-hero-art {
+  flex: 0 0 320px;
+  max-width: 320px;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #232946 0%, #181c24 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  overflow: hidden;
+  height: 420px;
+}
+.release-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.release-hero-details {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 0;
+}
+.release-hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(90deg, #ff1b6d 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+.release-hero-artist {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00d9ff;
+  margin: 0 0 1.2rem 0;
+}
+.release-hero-platforms {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.release-hero-platforms .platform-link img {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+  transition: transform 0.2s;
+}
+.release-hero-platforms .platform-link:hover img {
+  transform: scale(1.12);
+}
+
+// YouTube player and synced lyrics
+.release-hero-media {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.youtube-player-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  background: #000;
+}
+
+.youtube-player-container iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.2rem;
+}
+
+.release-hero-lyrics-card {
+  width: 100%;
+  background: rgba(30, 34, 44, 0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  overflow: hidden;
+  max-height: 36vh;
+  display: flex;
+  flex-direction: column;
+}
+.release-hero-lyrics-card h3 {
+  font-size: 1.1rem;
+  color: #ff1b6d;
+  margin-bottom: 0.7rem;
+}
+.release-hero-lyrics {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Hindi', 'Mangal', 'Kohinoor Devanagari', 'sans-serif';
+  font-size: 1.18rem;
+  color: #f4f4f4;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  max-height: 24vh;
+}
+
+// Horizontal BTS carousel
+.release-bts-section {
+  width: 100vw;
+  max-width: 1100px;
+  margin: 3rem auto 2rem auto;
+  padding: 0 1rem;
+}
+.release-bts-section h3 {
+  font-size: 1.3rem;
+  color: #00d9ff;
+  margin-bottom: 1rem;
+}
+.bts-carousel {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1.5rem;
+}
+.bts-carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+}
+.bts-carousel-track img {
+  width: 320px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  background: #232946;
+  scroll-snap-align: start;
+  transition: transform 0.2s;
+}
+.bts-carousel-track img:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 900px) {
+  .release-hero-card {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 1.2rem;
+  }
+  .release-hero-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  .release-hero-art {
+    max-width: 100vw;
+    min-width: 0;
+    width: 100%;
+    height: 220px;
+    border-radius: 1rem;
+  }
+  .release-hero-img {
+    min-height: 0;
+    max-height: 220px;
+    height: 220px;
+    border-radius: 1rem;
+  }
+  .release-hero-lyrics-card {
+    max-width: 100vw;
+    padding: 0.7rem 0.5rem;
+  }
+  .release-hero-lyrics {
+    font-size: 1.05rem;
+    max-height: 18vh;
+  }
+  .bts-carousel-track img {
+    width: 80vw;
+    min-width: 180px;
+    max-width: 320px;
+    height: 140px;
+  }
+}
+// Two-column details layout
+.details-two-col {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+}
+.details-cover-art {
+  flex: 0 0 340px;
+  max-width: 340px;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #232946 0%, #181c24 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  overflow: hidden;
+  height: 420px;
+}
+.details-cover-art .cover-art-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.details-main {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 0;
+}
+.details-main .premium-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(90deg, #ff1b6d 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.details-main .premium-artist {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00d9ff;
+  margin: 0 0 1.2rem 0;
+}
+.details-main .premium-platforms {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.details-main .platform-link img {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+  transition: transform 0.2s;
+}
+.details-main .platform-link:hover img {
+  transform: scale(1.12);
+}
+.details-main .lyrics-card.fit-viewport {
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  background: rgba(30, 34, 44, 0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  overflow: hidden;
+  max-height: 44vh;
+  display: flex;
+  flex-direction: column;
+}
+.details-main .hindi-lyrics.compact.fit-viewport {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Hindi', 'Mangal', 'Kohinoor Devanagari', 'sans-serif';
+  font-size: 1.25rem;
+  color: #f4f4f4;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  max-height: 32vh;
+}
+@media (max-width: 900px) {
+  .details-two-col {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .details-cover-art {
+    max-width: 100vw;
+    min-width: 0;
+    width: 100%;
+    height: 220px;
+    border-radius: 1rem;
+  }
+  .details-cover-art .cover-art-img {
+    min-height: 0;
+    max-height: 220px;
+    height: 220px;
+    border-radius: 1rem;
+  }
+  .details-main .lyrics-card.fit-viewport {
+    max-width: 100vw;
+    padding: 0.7rem 0.5rem;
+  }
+  .details-main .hindi-lyrics.compact.fit-viewport {
+    font-size: 1.1rem;
+    max-height: 28vh;
+  }
+}
+// Blurred, darkened cover art hero background
+
+// Large, centered cover art hero with overlay
+.cover-art-hero {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 48vh;
+  min-height: 320px;
+  max-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0 0 2.5rem 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.cover-art-img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  z-index: 1;
+  filter: brightness(0.85) saturate(1.1);
+}
+.cover-art-gradient {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(24,28,36,0.1) 0%, rgba(24,28,36,0.92) 90%);
+  z-index: 2;
+}
+.cover-art-overlay {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.cover-art-overlay .premium-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(90deg, #ff1b6d 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cover-art-overlay .premium-artist {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00d9ff;
+  margin: 0 0 1.2rem 0;
+}
+.cover-art-overlay .premium-platforms {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.cover-art-overlay .platform-link img {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+  transition: transform 0.2s;
+}
+.cover-art-overlay .platform-link:hover img {
+  transform: scale(1.12);
+}
+@media (max-width: 900px) {
+  .cover-art-hero {
+    min-height: 28vh;
+    max-height: 36vh;
+    height: 32vh;
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+  .cover-art-img {
+    min-height: 28vh;
+    max-height: 36vh;
+    height: 32vh;
+  }
+}
+
+.lyrics-card.fit-viewport {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  background: rgba(30, 34, 44, 0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  overflow: hidden;
+  max-height: 44vh;
+  display: flex;
+  flex-direction: column;
+}
+.hindi-lyrics.compact.fit-viewport {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Hindi', 'Mangal', 'Kohinoor Devanagari', 'sans-serif';
+  font-size: 1.25rem;
+  color: #f4f4f4;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  max-height: 32vh;
+}
+@media (max-width: 900px) {
+  .cover-hero-bg {
+    min-height: 28vh;
+    max-height: 36vh;
+    height: 32vh;
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+  .lyrics-card.fit-viewport {
+    max-height: 52vh;
+    padding: 0.7rem 0.5rem;
+  }
+  .hindi-lyrics.compact.fit-viewport {
+    font-size: 1.1rem;
+    max-height: 28vh;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Tiro+Devanagari+Hindi:ital,wght@0,400;1,400&display=swap');
+
+.release-detail-premium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem 4rem 1rem;
+  background: linear-gradient(135deg, #181c24 0%, #232946 100%);
+  min-height: 100vh;
+}
+
+.premium-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(90deg, #ff1b6d 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.premium-artist {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00d9ff;
+  margin: 0 0 1.5rem 0;
+}
+.premium-platforms {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+.platform-link img {
+  width: 38px;
+  height: 38px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+  transition: transform 0.2s;
+}
+.platform-link:hover img {
+  transform: scale(1.12);
+}
+.premium-lyrics-section.compact {
+  margin-top: 1.2rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 0.7rem;
+  padding: 0.8rem 0.7rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.premium-lyrics-section.compact h3 {
+  font-size: 1.1rem;
+  color: #ff1b6d;
+  margin-bottom: 0.7rem;
+}
+.hindi-lyrics.compact {
+  font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Hindi', 'Mangal', 'Kohinoor Devanagari', 'sans-serif';
+  font-size: 1.35rem;
+  color: #f4f4f4;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  letter-spacing: 0.2px;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.premium-bts-section {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(30, 34, 44, 0.92);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 2rem 1rem 2.5rem 1rem;
+  margin-bottom: 2rem;
+  color: #f4f4f4;
+}
+.premium-bts-section h3 {
+  font-size: 1.3rem;
+  color: #00d9ff;
+  margin-bottom: 1rem;
+}
+.bts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.bts-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  background: #232946;
+}
+
+@media (max-width: 900px) {
+  .premium-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .premium-cover-art {
+    min-width: 220px;
+    max-width: 320px;
+    min-height: 220px;
+  }
+  .carousel-images {
+    width: 90vw;
+    max-width: 320px;
+    height: 200px;
+  }
+}
 .release-detail-container {
   display: flex;
   flex-direction: column;

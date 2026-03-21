@@ -29,6 +29,7 @@ export class AppComponent {
   title = 'gblproductions';
   isScrolled = false;
   isHandset$: Observable<boolean>;
+  currentYear = new Date().getFullYear();
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
