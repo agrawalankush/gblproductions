@@ -1,4 +1,3 @@
-
 <div class="release-detail-premium" *ngIf="release">
   <div class="release-hero-wrapper">
     <div class="release-hero-bg" [style.background-image]="'url(' + release.coverArt + ')'"></div>
@@ -6,48 +5,74 @@
     <div class="release-hero-main-container">
       <div class="release-hero-card">
         <div class="release-hero-content">
-          <div class="release-hero-art">
-            <img [src]="release.coverArt" alt="{{ release.title }} Album Art" class="release-hero-img">
-          </div>
           <div class="release-hero-details">
-            <h1 class="release-hero-title">{{ release.title }}</h1>
-            <h2 class="release-hero-artist">{{ release.artist }}</h2>
-            <div class="release-hero-platforms">
-              <a [href]="release.links.youtube" target="_blank" *ngIf="release.links.youtube" class="platform-link youtube">
-                <img src="assets/youtube_red.png" alt="YouTube">
-              </a>
-              <a [href]="release.links.youtubeMusic" target="_blank" *ngIf="release.links.youtubeMusic" class="platform-link youtube-music">
-                <img src="assets/youtube_music_logo.svg" alt="YouTube Music">
-              </a>
-              <a [href]="release.links.spotify" target="_blank" *ngIf="release.links.spotify" class="platform-link spotify">
-                <img src="assets/spotify_logo.svg" alt="Spotify">
-              </a>
-              <a [href]="release.links.appleMusic" target="_blank" *ngIf="release.links.appleMusic" class="platform-link apple">
-                <img src="assets/apple_music_logo.svg" alt="Apple Music">
-              </a>
-              <a [href]="release.links.jiosaavan" target="_blank" *ngIf="release.links.jiosaavan" class="platform-link jio">
-                <img src="assets/jio_savan_logo.png" alt="JioSaavan">
-              </a>
-              <a [href]="release.links.amazonMusic" target="_blank" *ngIf="release.links.amazonMusic" class="platform-link amazon">
-                <img src="assets/amazon_music.webp" alt="Amazon Music">
-              </a>
-            </div>
             <!-- YouTube Player & Synced Lyrics -->
             <div class="release-hero-media">
-              <div class="youtube-player-container" *ngIf="release.links.youtube_id">
-                <iframe 
-                  [src]="getYouTubeEmbedUrl(release.links.youtube_id) | safe"
-                  width="100%" 
-                  height="280" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-                </iframe>
+              <!-- Custom YouTube Thumbnail Player -->
+              <div class="youtube-container" *ngIf="release.links.youtube_id">
+                <!-- Thumbnail (shown when player is closed) -->
+                <div class="thumbnail-wrapper" *ngIf="!isPlayerOpen">
+                  <img [src]="getYouTubeThumbnail(release.links.youtube_id)" alt="YouTube Thumbnail"
+                    class="youtube-thumbnail">
+                  <div class="play-button-overlay" (click)="togglePlayer()">
+                    <div class="play-button">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <!-- YouTube Embed (shown on play) -->
+                <div class="youtube-player-wrapper" *ngIf="isPlayerOpen">
+                  <div class="youtube-player-container" [attr.id]="'yt-player-' + release.id"></div>
+                </div>
               </div>
-              <div class="release-hero-lyrics-card">
-                <h3>Lyrics</h3>
-                <div class="release-hero-lyrics-scroll">
-                  <pre class="release-hero-lyrics">{{ release.lyrics }}</pre>
+
+              <!-- Stream Links & Lyrics -->
+              <div class="release-media-content">
+                <!-- Stream Links -->
+                <div class="stream-links-section">
+                  <h3>Stream On</h3>
+                  <div class="stream-links">
+                    <a [href]="release.links.youtube" target="_blank" *ngIf="release.links.youtube"
+                      class="stream-link youtube" title="YouTube">
+                      <img src="assets/youtube_red.png" alt="YouTube">
+                      <span>YouTube</span>
+                    </a>
+                    <a [href]="release.links.youtubeMusic" target="_blank" *ngIf="release.links.youtubeMusic"
+                      class="stream-link youtube-music" title="YouTube Music">
+                      <img src="assets/youtube_music_logo.svg" alt="YouTube Music">
+                      <span>YouTube Music</span>
+                    </a>
+                    <a [href]="release.links.spotify" target="_blank" *ngIf="release.links.spotify"
+                      class="stream-link spotify" title="Spotify">
+                      <img src="assets/spotify_logo.svg" alt="Spotify">
+                      <span>Spotify</span>
+                    </a>
+                    <a [href]="release.links.appleMusic" target="_blank" *ngIf="release.links.appleMusic"
+                      class="stream-link apple" title="Apple Music">
+                      <img src="assets/apple_music_logo.svg" alt="Apple Music">
+                      <span>Apple Music</span>
+                    </a>
+                    <a [href]="release.links.jiosaavan" target="_blank" *ngIf="release.links.jiosaavan"
+                      class="stream-link jio" title="JioSaavan">
+                      <img src="assets/jio_savan_logo.png" alt="JioSaavan">
+                      <span>JioSaavan</span>
+                    </a>
+                    <a [href]="release.links.amazonMusic" target="_blank" *ngIf="release.links.amazonMusic"
+                      class="stream-link amazon" title="Amazon Music">
+                      <img src="assets/amazon_music.webp" alt="Amazon Music">
+                      <span>Amazon Music</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Lyrics Section -->
+                <div class="lyrics-section">
+                  <h3>Lyrics</h3>
+                  <div class="lyrics-scroll">
+                    <pre class="lyrics-text">{{ release.lyrics }}</pre>
+                  </div>
                 </div>
               </div>
             </div>
@@ -56,8 +81,9 @@
       </div>
     </div>
   </div>
-  <div class="release-bts-section" *ngIf="release.behindTheScenes && release.behindTheScenes.images && release.behindTheScenes.images.length > 0">
-    <h3>Behind The Scenes</h3>
+  <div class="release-bts-section"
+    *ngIf="release.behindTheScenes && release.behindTheScenes.images && release.behindTheScenes.images.length > 0">
+    <h3>Making Of</h3>
     <p *ngIf="release.behindTheScenes.description">{{ release.behindTheScenes.description }}</p>
     <div class="bts-carousel">
       <div class="bts-carousel-track">
