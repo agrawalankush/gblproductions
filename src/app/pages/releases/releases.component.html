@@ -7,8 +7,8 @@
         </div>
         <mat-card-content>
           <h3>{{ release.title }}</h3>
-          <p>{{release.artist}}</p>
-          <p>{{ release.releaseDate }}</p>
+          <p class="release-artist">{{ release.artist }}</p>
+          <p class="release-date">{{ release.releaseDate | date:'mediumDate' }}</p>
         </mat-card-content>
       </mat-card>
     </a>

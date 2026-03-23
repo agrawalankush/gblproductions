@@ -6,9 +6,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ReleaseDetailComponent } from './pages/release-detail/release-detail.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'releases', component: ReleasesComponent },
-  { path: 'release/:id', component: ReleaseDetailComponent },
-  { path: 'artists', component: ArtistsComponent },
-  { path: 'about', component: AboutComponent },
+  { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
+  { path: 'releases', component: ReleasesComponent, data: { animation: 'ReleasesPage' } },
+  { path: 'release/:id', component: ReleaseDetailComponent, data: { animation: 'ReleaseDetailPage' } },
+  { path: 'artists', component: ArtistsComponent, data: { animation: 'ArtistsPage' } },
+  { path: 'about', component: AboutComponent, data: { animation: 'AboutPage' } },
 ];

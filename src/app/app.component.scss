@@ -7,7 +7,8 @@ $text-muted: #b3b3b3;
 $card-bg: #0f0f0f;
 $border-color: #2a2a2a;
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -121,9 +122,10 @@ main {
   gap: 1rem;
   align-items: center;
 
-  a, button {
-    width: 40px;
-    height: 40px;
+  a,
+  button {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: rgba($text-light, 0.05);
     border: 1px solid rgba($accent-color, 0.2);
@@ -277,6 +279,8 @@ footer {
 @media (max-width: 768px) {
   mat-toolbar {
     padding: 0 1rem;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .nav-links {

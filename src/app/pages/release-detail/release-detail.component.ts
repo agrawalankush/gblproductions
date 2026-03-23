@@ -48,6 +48,13 @@ export class ReleaseDetailComponent implements OnInit {
         this.otherReleases = data.filter(r => r.id !== releaseId);
         this.currentIndex = data.findIndex(r => r.id === releaseId);
         this.btsIndex = 0;
+        
+        // Reset player state to avoid layout shift and overlapping videos
+        this.isPlayerOpen = false;
+        if (this.player && typeof this.player.destroy === 'function') {
+          this.player.destroy();
+        }
+        this.player = null;
       });
     });
   }
